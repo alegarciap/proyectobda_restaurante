@@ -1,4 +1,4 @@
-package com.mycompany.restaurante;
+package Pruebas;
 
 import dominio.ModuloProductos.Disponibilidad;
 import dominio.ModuloProductos.Ingrediente;
@@ -14,7 +14,7 @@ import javax.persistence.Persistence;
  *
  * @author ErnestoLpz_252663
  */
-public class Restaurante {
+public class PruebasModulo {
 
     public static void main(String[] args) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("ConexionPU");
