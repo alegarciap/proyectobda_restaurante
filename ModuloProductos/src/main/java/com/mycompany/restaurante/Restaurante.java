@@ -44,7 +44,7 @@ public class Restaurante {
             em.merge(pizza);
 
             em.getTransaction().commit();
-            System.out.println("Datos guardados exitosamente");
+            System.out.println("Datos guardados exitosamente :)");
 
             // Consultar producto
             Producto resultado = em.find(Producto.class, pizza.getId());
