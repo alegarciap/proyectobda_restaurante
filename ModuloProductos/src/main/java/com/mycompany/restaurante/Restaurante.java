@@ -1,10 +1,10 @@
 package com.mycompany.restaurante;
 
-import Entidades.Disponibilidad;
-import Entidades.Ingrediente;
-import Entidades.Producto;
-import Entidades.ProductoIngrediente;
-import Entidades.TipoPlatillo;
+import dominio.ModuloProductos.Disponibilidad;
+import dominio.ModuloProductos.Ingrediente;
+import dominio.ModuloProductos.Producto;
+import dominio.ModuloProductos.ProductoIngrediente;
+import dominio.ModuloProductos.TipoPlatillo;
 import java.util.HashSet;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

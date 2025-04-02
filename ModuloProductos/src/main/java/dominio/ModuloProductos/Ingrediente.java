@@ -1,4 +1,4 @@
-package Entidades;
+package dominio.ModuloProductos;
 
 import java.io.Serializable;
 import javax.persistence.*;
