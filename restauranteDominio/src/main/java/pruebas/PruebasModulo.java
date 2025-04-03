@@ -1,9 +1,7 @@
 package pruebas;
 
 import enums.Disponibilidad;
-import entidades.Ingrediente;
 import entidades.Producto;
-import entidades.ProductoIngrediente;
 import enums.TipoPlatillo;
 import java.util.HashSet;
 import javax.persistence.EntityManager;
