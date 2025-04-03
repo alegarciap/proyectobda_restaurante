@@ -5,6 +5,7 @@
 package entidades;
 
 import java.io.Serializable;
+import java.util.Objects;
 import javax.persistence.*;
 
 /**
@@ -75,6 +76,40 @@ public class ProductoIngrediente implements Serializable{
 
     public void setIngrediente(Ingrediente ingrediente) {
         this.ingrediente = ingrediente;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 53 * hash + Objects.hashCode(this.id);
+        hash = 53 * hash + Objects.hashCode(this.cantidadRequerida);
+        hash = 53 * hash + Objects.hashCode(this.producto);
+        hash = 53 * hash + Objects.hashCode(this.ingrediente);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final ProductoIngrediente other = (ProductoIngrediente) obj;
+        if (!Objects.equals(this.id, other.id)) {
+            return false;
+        }
+        if (!Objects.equals(this.cantidadRequerida, other.cantidadRequerida)) {
+            return false;
+        }
+        if (!Objects.equals(this.producto, other.producto)) {
+            return false;
+        }
+        return Objects.equals(this.ingrediente, other.ingrediente);
     }
 
     @Override

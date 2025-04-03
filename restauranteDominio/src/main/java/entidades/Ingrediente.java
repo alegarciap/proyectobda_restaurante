@@ -4,6 +4,7 @@ import enums.UnidadMedida;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import javax.persistence.*;
 
 /**
@@ -87,6 +88,44 @@ public class Ingrediente implements Serializable {
 
     public void setProductos(List<ProductoIngrediente> productos) {
         this.productos = productos;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 83 * hash + Objects.hashCode(this.id);
+        hash = 83 * hash + Objects.hashCode(this.nombre);
+        hash = 83 * hash + Objects.hashCode(this.unidadMedida);
+        hash = 83 * hash + Objects.hashCode(this.stock);
+        hash = 83 * hash + Objects.hashCode(this.productos);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Ingrediente other = (Ingrediente) obj;
+        if (!Objects.equals(this.nombre, other.nombre)) {
+            return false;
+        }
+        if (!Objects.equals(this.id, other.id)) {
+            return false;
+        }
+        if (this.unidadMedida != other.unidadMedida) {
+            return false;
+        }
+        if (!Objects.equals(this.stock, other.stock)) {
+            return false;
+        }
+        return Objects.equals(this.productos, other.productos);
     }
 
     @Override
