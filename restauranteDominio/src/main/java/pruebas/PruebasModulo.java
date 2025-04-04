@@ -31,7 +31,7 @@ public class PruebasModulo {
             em.persist(Ing2);
 
             // Crear producto
-            Producto pizza = new Producto("Pizza Pepperoni", 150.0, TipoPlatillo.PLATILLO, Disponibilidad.DISPONIBLE, new HashSet<>());
+            Producto pizza = new Producto("Pizza Pepperoni", 150.0, TipoPlatillo.PLATILLO, Disponibilidad.HABILITADO, new HashSet<>());
             em.persist(pizza);
 
             //Relacionar ingredientes con el producto

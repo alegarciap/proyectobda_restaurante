@@ -50,7 +50,7 @@ public class ProductoDAO {
             tx.begin();
             Producto producto = entityManager.find(Producto.class, id);
             if (producto != null) {
-                producto.setDisponibilidad(Disponibilidad.AGOTADO);
+                producto.setDisponibilidad(Disponibilidad.DESHABILITADO);
                 entityManager.merge(producto);
             }
             tx.commit();

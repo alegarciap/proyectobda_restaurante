@@ -46,7 +46,7 @@ public class Producto implements Serializable {
     private TipoPlatillo tipo;
 
     /**
-     * Disponibilidad del producto 
+     * Disponibilidad del producto
      */
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)

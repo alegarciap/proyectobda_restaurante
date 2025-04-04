@@ -9,5 +9,5 @@ package enums;
  * @author Laboratorios
  */
 public enum Disponibilidad {
-    DISPONIBLE, AGOTADO;
+    HABILITADO, DESHABILITADO;
 }

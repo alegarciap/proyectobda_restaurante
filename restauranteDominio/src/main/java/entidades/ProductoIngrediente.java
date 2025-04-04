@@ -5,7 +5,7 @@ import javax.persistence.*;
 
 /**
  *
- * @author alega
+ * @author alega & ErnestoLpz_252663
  */
 @Entity
 @Table(name = "producto_ingrediente")
