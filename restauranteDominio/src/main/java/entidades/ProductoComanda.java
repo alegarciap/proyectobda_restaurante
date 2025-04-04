@@ -118,54 +118,7 @@ public class ProductoComanda implements Serializable {
     }
 
     @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 67 * hash + Objects.hashCode(this.id);
-        hash = 67 * hash + Objects.hashCode(this.cantidad);
-        hash = 67 * hash + Objects.hashCode(this.importeTotal);
-        hash = 67 * hash + Objects.hashCode(this.notas);
-        hash = 67 * hash + Objects.hashCode(this.precioUnitario);
-        hash = 67 * hash + Objects.hashCode(this.comanda);
-        hash = 67 * hash + Objects.hashCode(this.producto);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final ProductoComanda other = (ProductoComanda) obj;
-        if (!Objects.equals(this.notas, other.notas)) {
-            return false;
-        }
-        if (!Objects.equals(this.id, other.id)) {
-            return false;
-        }
-        if (!Objects.equals(this.cantidad, other.cantidad)) {
-            return false;
-        }
-        if (!Objects.equals(this.importeTotal, other.importeTotal)) {
-            return false;
-        }
-        if (!Objects.equals(this.precioUnitario, other.precioUnitario)) {
-            return false;
-        }
-        if (!Objects.equals(this.comanda, other.comanda)) {
-            return false;
-        }
-        return Objects.equals(this.producto, other.producto);
-    }
-
-    @Override
     public String toString() {
         return "ProductoComanda{" + "id=" + id + ", cantidad=" + cantidad + ", importeTotal=" + importeTotal + ", notas=" + notas + ", precioUnitario=" + precioUnitario + ", comanda=" + comanda + ", producto=" + producto + '}';
     }
-    
 }

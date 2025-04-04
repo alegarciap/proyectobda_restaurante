@@ -65,38 +65,7 @@ public class Mesa implements Serializable {
     }
 
     @Override
-    public int hashCode() {
-        int hash = 3;
-        hash = 53 * hash + Objects.hashCode(this.id);
-        hash = 53 * hash + Objects.hashCode(this.numero);
-        hash = 53 * hash + Objects.hashCode(this.comandas);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Mesa other = (Mesa) obj;
-        if (!Objects.equals(this.id, other.id)) {
-            return false;
-        }
-        if (!Objects.equals(this.numero, other.numero)) {
-            return false;
-        }
-        return Objects.equals(this.comandas, other.comandas);
-    }
-
-    @Override
     public String toString() {
         return "Mesa{" + "id=" + id + ", numero=" + numero + ", comandas=" + comandas + '}';
-    }
-    
+    }   
 }

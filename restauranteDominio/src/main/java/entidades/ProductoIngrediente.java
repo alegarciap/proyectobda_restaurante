@@ -79,42 +79,12 @@ public class ProductoIngrediente implements Serializable{
     }
 
     @Override
-    public int hashCode() {
-        int hash = 5;
-        hash = 53 * hash + Objects.hashCode(this.id);
-        hash = 53 * hash + Objects.hashCode(this.cantidadRequerida);
-        hash = 53 * hash + Objects.hashCode(this.producto);
-        hash = 53 * hash + Objects.hashCode(this.ingrediente);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final ProductoIngrediente other = (ProductoIngrediente) obj;
-        if (!Objects.equals(this.id, other.id)) {
-            return false;
-        }
-        if (!Objects.equals(this.cantidadRequerida, other.cantidadRequerida)) {
-            return false;
-        }
-        if (!Objects.equals(this.producto, other.producto)) {
-            return false;
-        }
-        return Objects.equals(this.ingrediente, other.ingrediente);
-    }
-
-    @Override
     public String toString() {
-        return "ProductoIngrediente{" + "id=" + id + ", cantidadRequerida=" + cantidadRequerida + ", producto=" + producto + ", ingrediente=" + ingrediente + '}';
-    }
-    
+    return "ProductoIngrediente{" + 
+           "id=" + id + 
+           ", cantidadRequerida=" + cantidadRequerida + 
+           ", productoId=" + (producto != null ? producto.getId() : "null") + 
+           ", ingredienteId=" + (ingrediente != null ? ingrediente.getId() : "null") + 
+           '}';
+}
 }

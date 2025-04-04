@@ -125,52 +125,6 @@ public class Comanda implements Serializable {
     }
 
     @Override
-    public int hashCode() {
-        int hash = 3;
-        hash = 79 * hash + Objects.hashCode(this.id);
-        hash = 79 * hash + Objects.hashCode(this.folio);
-        hash = 79 * hash + Objects.hashCode(this.fechaHora);
-        hash = 79 * hash + Objects.hashCode(this.estado);
-        hash = 79 * hash + Objects.hashCode(this.totalVenta);
-        hash = 79 * hash + Objects.hashCode(this.mesa);
-        hash = 79 * hash + Objects.hashCode(this.productosComanda);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Comanda other = (Comanda) obj;
-        if (!Objects.equals(this.folio, other.folio)) {
-            return false;
-        }
-        if (!Objects.equals(this.id, other.id)) {
-            return false;
-        }
-        if (!Objects.equals(this.fechaHora, other.fechaHora)) {
-            return false;
-        }
-        if (this.estado != other.estado) {
-            return false;
-        }
-        if (!Objects.equals(this.totalVenta, other.totalVenta)) {
-            return false;
-        }
-        if (!Objects.equals(this.mesa, other.mesa)) {
-            return false;
-        }
-        return Objects.equals(this.productosComanda, other.productosComanda);
-    }
-
-    @Override
     public String toString() {
         return "Comanda{" + "id=" + id + ", folio=" + folio + ", fechaHora=" + fechaHora + ", estado=" + estado + ", totalVenta=" + totalVenta + ", mesa=" + mesa + ", productosComanda=" + productosComanda + '}';
     }
