@@ -55,7 +55,17 @@ public class ClienteFrecuente extends Cliente implements Serializable{
         this.gastoTotalAcumulado = 0.0;
         this.puntosFidelidad = 0;
     }
-
+    /**
+     * Constructor con todos los atributos, incluído el ID.
+     * Establece los atributos únicos a 0.
+     * @param id ID del cliente.
+     * @param nombre Nombre del cliente.
+     * @param apellidoPaterno Apellido paterno del cliente.
+     * @param apellidoMaterno Apellido materno del cliente.
+     * @param correo Correo electrónico del cliente.
+     * @param fechaRegistro Fecha de registro del cliente.
+     * @param telefono Teléfono del cliente.  
+     */
     public ClienteFrecuente(
             Long id, 
             String nombre, 
@@ -96,6 +106,6 @@ public class ClienteFrecuente extends Cliente implements Serializable{
     public void sumarVisita(Double pagoComanda){
         this.conteoVisitas++; // Incrementa el conteo de visitas en 1.
         this.gastoTotalAcumulado += pagoComanda; // Suma el pago de la nueva comanda al gasto total acumulado
-        this.puntosFidelidad = (int) this.gastoTotalAcumulado.doubleValue() / 20;
+        this.puntosFidelidad = (int) this.gastoTotalAcumulado.doubleValue() / 20; // Divide el gasto total acumulado entre 20, y mantiene la parte entera del resultado.
     }
 }
