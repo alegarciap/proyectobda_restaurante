@@ -2,8 +2,6 @@ package entidades;
 
 import enums.UnidadMedida;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 import javax.persistence.*;
 
 /**
@@ -44,13 +42,6 @@ public class Ingrediente implements Serializable {
      */
     @Column(name = "stock", nullable = false)
     private Double stock;
-    
-    /**
-     * Lista de productos que contienen este ingrediente.
-     * Relación bidireccional con ProductoIngrediente y casacadas PERSIST y MERGE.
-     */
-    @OneToMany(mappedBy = "ingrediente", cascade = {CascadeType.PERSIST, CascadeType.MERGE}) 
-    private List<ProductoIngrediente> productos = new ArrayList<>();
 
     /**
      * Constructor vacío por defecto.
@@ -159,63 +150,13 @@ public class Ingrediente implements Serializable {
     }
 
     /**
-     * Obtiene la lista de productos que contienen este ingrediente.
-     *
-     * @return Lista de ProductoIngrediente.
-     */
-    public List<ProductoIngrediente> getProductos() {
-        return productos;
-    }
-
-    /**
-     * Establece la lista de productos relacionados con este ingrediente.
-     *
-     * @param productos Lista de ProductoIngrediente.
-     */
-    public void setProductos(List<ProductoIngrediente> productos) {
-        this.productos = productos;
-    }
-    
-    /**
-     * Agrega un ProductoIngrediente a la lista de productos que utilizan este
-     * ingrediente. 
-     * 
-     * Además, se asegura de establecer correctamente la relación
-     * bidireccional, asignando este ingrediente como el dueño del
-     * ProductoIngrediente.
-     *
-     * Este método es útil para mantener sincronizada la relación entre ambas
-     * entidades.
-     *
-     * @param productoIngrediente El objeto ProductoIngrediente que se quiere agregar a la lista.
-     */
-    public void agregarProductoIngrediente(ProductoIngrediente productoIngrediente) {
-        productos.add(productoIngrediente);
-        productoIngrediente.setIngrediente(this);
-    }
-
-    /**
-     * Elimina una instancia de ProductoIngrediente de la lista de productos
-     * relacionados con este ingrediente. 
-     * 
-     * También elimina la referencia a este
-     * ingrediente en la instancia de ProductoIngrediente.
-     *
-     * @param productoIngrediente La instancia de ProductoIngrediente a eliminar.
-     */
-    public void eliminarProductoIngrediente(ProductoIngrediente productoIngrediente) {
-        productos.remove(productoIngrediente);
-        productoIngrediente.setIngrediente(null);
-    }
-    
-    /**
      * Representación en forma de cadena del objeto Ingrediente.
      *
      * @return Cadena con los atributos del ingrediente.
      */
     @Override
     public String toString() {
-        return "Ingrediente{" + "id=" + id + ", nombre=" + nombre + ", unidadMedida=" + unidadMedida + ", stock=" + stock + ", productos=" + productos + '}';
+        return "Ingrediente{" + "id=" + id + ", nombre=" + nombre + ", unidadMedida=" + unidadMedida + ", stock=" + stock + '}';
     }
     
 }
