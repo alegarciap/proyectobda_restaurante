@@ -47,6 +47,10 @@ public class Comanda implements Serializable {
     // fetch type eager para siempre cargar los productos al solicitar una comanda
     @OneToMany(mappedBy = "comanda", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private List<ProductoComanda> productosComanda = new ArrayList<>();
+    
+    @ManyToOne
+    @JoinColumn(name = "id_cliente", nullable = true)
+    private Cliente cliente;
 
     public Comanda() {
     }
